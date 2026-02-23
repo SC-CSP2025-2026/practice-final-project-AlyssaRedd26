@@ -20,13 +20,12 @@ const loadMoviesByID = async (MovieID) => {
 
   const response = await fetch(url, options);
   const result = await response.json();
-
   const movieName = result.data.title;
   const writers = result.data.writers;
 
   listGroup.innerHTML = "";
 
-  const title = `<li class="list-group-item movie-header"><strong>${result.data.title}<strong></li>`;
+  const title = `<li class="list-group-item movie-header"><strong> movie : ${result.data.title}<strong></li>`;
   listGroup.insertAdjacentHTML("beforeend", title);
 
   writers.forEach((writer) => {
